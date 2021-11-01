@@ -1,6 +1,4 @@
-
 const formDisplayer = (state = { visibility: false }, action) => {
-
   switch (action.type) {
     case 'SET_FORM_VISIBLE':
       return {
@@ -15,7 +13,6 @@ const formDisplayer = (state = { visibility: false }, action) => {
     default:
       return state
   }
-
 }
 
 export default formDisplayer

@@ -27,11 +27,6 @@ export const setVisibilityFilter = filter => ({
   type: 'SET_VISIBILITY_FILTER',
   filter
 })
-//todo delete
-export const setTodoPasser = todo => ({
-  type: 'SET_TODO_FOR_EDIT',
-  todo
-})
 
 export const setFormVisible = todo => ({
   type: 'SET_FORM_VISIBLE',

@@ -3,7 +3,7 @@ import Filter from './footer/Filter'
 import VisibleTodoList from './todoList/VisibleTodoList'
 import FormWrapper from "./formWrappper/FormWrapper"
 import './App.css'
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import MiddleBlock from "./middleBlock/MiddleBlock";
 
 const App = ({visibility}) => (
