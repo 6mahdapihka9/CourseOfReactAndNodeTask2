@@ -57,21 +57,21 @@ const EditTodo = ({ todo, edit }) => {
   }
 
   return (
-      <div className={'wrapper'}>
-        <form onSubmit={submitHandler}>
-          <input value={value.name} name={'name'} onChange={onChange} required/>
-          <select value={value.category} name={'category'} onChange={onChange} required>
-            <option value={'Task'}>Task</option>
-            <option value={'Idea'}>Idea</option>
-            <option value={'Quote'}>Quote</option>
-            <option value={'Thought'}>Thought</option>
-          </select>
-          <input value={value.text} name={'text'} onChange={onChange} required/>
-          <button type="submit">
-            Edit Todo
-          </button>
-        </form>
-      </div>
+    <div className={'wrapper'}>
+      <form onSubmit={submitHandler}>
+        <input value={value.name} name={'name'} onChange={onChange} required/>
+        <select value={value.category} name={'category'} onChange={onChange} required>
+          <option value={'Task'}>Task</option>
+          <option value={'Idea'}>Idea</option>
+          <option value={'Quote'}>Quote</option>
+          <option value={'Thought'}>Thought</option>
+        </select>
+        <input value={value.text} name={'text'} onChange={onChange} required/>
+        <button type="submit">
+          Edit Todo
+        </button>
+      </form>
+    </div>
   )
 }
 

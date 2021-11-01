@@ -1,3 +1,8 @@
+export const initTodos = todos => ({
+  type: 'INIT_TODOS',
+  todos
+})
+
 export const addTodo = todo => ({
   type: 'ADD_TODO',
   todo
@@ -22,10 +27,19 @@ export const setVisibilityFilter = filter => ({
   type: 'SET_VISIBILITY_FILTER',
   filter
 })
-
+//todo delete
 export const setTodoPasser = todo => ({
   type: 'SET_TODO_FOR_EDIT',
   todo
+})
+
+export const setFormVisible = todo => ({
+  type: 'SET_FORM_VISIBLE',
+  todo
+})
+
+export const setFormInvisible = () => ({
+  type: 'SET_FORM_INVISIBLE'
 })
 
 

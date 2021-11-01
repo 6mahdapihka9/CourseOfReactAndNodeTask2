@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { setTodoPasser } from "../../../actions";
+import {setFormVisible, setTodoPasser} from "../../../actions";
 import { connect } from "react-redux";
 import './Todo.css';
 
-const Todo = ({setPassedTodo, toggleTodo, deleteTodo, todo}) => (
+const Todo = ({setFormVisible, toggleTodo, deleteTodo, todo}) => (
   <li style={{
       textDecoration: todo.completed ? 'line-through' : 'none'
     }}>
@@ -23,7 +23,7 @@ const Todo = ({setPassedTodo, toggleTodo, deleteTodo, todo}) => (
     <div>
       {todo.datesFromText.join(', ')}
     </div>
-    <button onClick={setPassedTodo}>
+    <button onClick={setFormVisible}>
       edit
     </button>
     <button onClick={toggleTodo}>
@@ -45,7 +45,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  setPassedTodo: () => dispatch(setTodoPasser(ownProps.todo)),
+  setFormVisible: () => dispatch(setFormVisible(ownProps.todo)),
   toggleTodo: ownProps.toggleTodo,
   deleteTodo: ownProps.deleteTodo
 })
