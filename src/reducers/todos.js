@@ -14,15 +14,15 @@ const todos = (state = [], action) => {
       ]
     case 'EDIT_TODO':
       return state.map(todo =>
-        (todo.id === action.todo.id)
-          ? action.todo
-          : todo
+          (todo.id === action.todo.id)
+              ? action.todo
+              : todo
       )
     case 'TOGGLE_TODO':
       return state.map(todo =>
-        (todo.id === action.id)
-          ? {...todo, completed: !todo.completed}
-          : todo
+          (todo.id === action.id)
+              ? {...todo, completed: !todo.completed}
+              : todo
       )
     case 'DELETE_TODO':
       return state.filter(todo => todo.id !== action.id)

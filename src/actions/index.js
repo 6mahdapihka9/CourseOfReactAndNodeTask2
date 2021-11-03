@@ -37,6 +37,11 @@ export const setFormInvisible = () => ({
   type: 'SET_FORM_INVISIBLE'
 })
 
+export const setAnnouncerEvent = (text, isError) => ({
+  type: 'SET_ANNOUNCER_EVENT',
+  text,
+  isError
+})
 
 export const VisibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',

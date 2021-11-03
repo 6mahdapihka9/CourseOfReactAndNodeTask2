@@ -3,7 +3,7 @@ import Form from "./form/Form";
 
 const FormWrapper = () => (
     <div className={'form-wrapper wrapper'}>
-      <Form />
+      <Form/>
     </div>
 )
 
