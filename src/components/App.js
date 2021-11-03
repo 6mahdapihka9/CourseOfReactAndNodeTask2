@@ -5,13 +5,17 @@ import FormWrapper from "./formWrappper/FormWrapper"
 import './App.css'
 import {connect} from "react-redux";
 import MiddleBlock from "./middleBlock/MiddleBlock";
+import Header from "./header/Header";
 
 const App = ({visibility}) => (
-    <div>
-      {(visibility) ? <FormWrapper/> : null}
-      <Filter/>
-      <VisibleTodoList/>
-      <MiddleBlock/>
+    <div className={'view'}>
+      <Header/>
+      {(visibility) ? <FormWrapper className={'form-wrapper'}/> : null}
+      <div className={'main'}>
+        <Filter/>
+        <VisibleTodoList/>
+        <MiddleBlock/>
+      </div>
     </div>
 )
 

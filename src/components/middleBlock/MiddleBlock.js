@@ -33,7 +33,7 @@ const MiddleBlock = ({dispatch, event}) => {
   }
 
   return (
-      <div className={'wrapper middle-block'}>
+      <div className={'middle-block'}>
         <div className={'announcer ' +
         ((announcer.isError) ? 'announcer-error ' : 'announcer-success ') +
         ((announcer.isVisible) ? 'visible ' : 'invisible ')
