@@ -1,5 +1,5 @@
 import React from "react"
-import './Container.css'
+import './SVGContainer.css'
 import {SVGs} from '../../../svg/SVGs'
 
 const SVGContainer = ({data, clickHandler}) => {
