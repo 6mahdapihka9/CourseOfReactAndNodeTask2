@@ -20,7 +20,7 @@ const Todo = ({setFormVisible, toggleTodo, deleteTodo, todo}) => (
       <DataContainer className={'datesFromText'} data={todo.datesFromText.join(', ')}
                      tertiary={true}/>
       <SVGContainer data={'edit'} clickHandler={setFormVisible}/>
-      <SVGContainer data={(todo.completed)? 'complete': ''} clickHandler={toggleTodo}/>
+      <SVGContainer data={(todo.completed) ? 'complete' : ''} clickHandler={toggleTodo}/>
       <SVGContainer data={'delete'} clickHandler={deleteTodo}/>
 
     </li>
