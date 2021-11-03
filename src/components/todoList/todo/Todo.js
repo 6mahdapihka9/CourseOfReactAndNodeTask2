@@ -11,11 +11,14 @@ const Todo = ({setFormVisible, toggleTodo, deleteTodo, todo}) => (
       textDecoration: todo.completed ? 'line-through' : 'none'
     }}>
       <SVGContainer data={todo.category}/>
-      <DataContainer isNecessary={true} data={todo.name}/>
-      <DataContainer isNecessary={false} data={todo.category}/>
-      <DataContainer isNecessary={false} data={todo.dateOfCreation.toLocaleDateString()}/>
-      <DataContainer isNecessary={true} long={true} data={todo.text}/>
-      <DataContainer isNecessary={false} data={todo.datesFromText.join(', ')}/>
+      <DataContainer className={'name'} data={todo.name}/>
+      <DataContainer className={'category'} data={todo.category}
+                     secondary={true}/>
+      <DataContainer className={'dateOfCreation'} data={todo.dateOfCreation.toLocaleDateString()}
+                     tertiary={true}/>
+      <DataContainer className={'text'} data={todo.text}/>
+      <DataContainer className={'datesFromText'} data={todo.datesFromText.join(', ')}
+                     tertiary={true}/>
       <SVGContainer data={'edit'} clickHandler={setFormVisible}/>
       <SVGContainer data={(todo.completed)? 'complete': ''} clickHandler={toggleTodo}/>
       <SVGContainer data={'delete'} clickHandler={deleteTodo}/>

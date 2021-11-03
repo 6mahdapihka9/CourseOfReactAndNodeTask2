@@ -1,13 +1,16 @@
 import React from "react"
 import './Container.css'
 
-const DataContainer = ({data, isNecessary, long}) => {
+const DataContainer = ({data, secondary, tertiary, className, long}) => {
 
 
   return (
       <div className={'container '+
-      ((!isNecessary)? 'unimportant-con ' : '') +
-      ((long)? 'stretch-wrapper ' : '')}>
+      ((secondary)? 'secondary ' : '') +
+      ((tertiary)? 'tertiary ' : '') +
+      ((long)? 'stretch-wrapper ' : '') +
+      ((className)? className: '')
+      }>
         { data }
       </div>
   )

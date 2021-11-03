@@ -5,11 +5,17 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-
-.stretch-wrapper {
+.name{
+    width: 5em;
+    min-width: 5em;
+}
+.category{
+    width: 4em;
+    min-width: 4em;
+}
+.text {
     flex: 1;
 }
-
 .icon {
     display: flex;
     justify-content: center;
@@ -39,7 +45,12 @@
     fill: #424242;
 }
 @media screen and (max-width: 800px) {
-    .unimportant-con {
+    .secondary {
+        display: none;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .tertiary {
         display: none;
     }
 }
