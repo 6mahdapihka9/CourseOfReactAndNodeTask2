@@ -29,3 +29,9 @@
 .invisible {
     opacity: 0;
 }
+
+@media screen and (max-width: 800px) {
+    .middle-block div {
+        padding: .5em;
+    }
+}

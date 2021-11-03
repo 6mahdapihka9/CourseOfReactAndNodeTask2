@@ -31,3 +31,16 @@ section > *:not(:last-child) {
     background-color: rgba(0,0,0,0.5);
 }
 
+@media screen and (max-width: 800px) {
+    section {
+        margin: 1em 0;
+        padding: .5em;
+    }
+    section > * {
+        margin: .5em;
+        padding: .5em;
+    }
+    section > *:not(:last-child) {
+        margin-bottom: .5em;
+    }
+}
