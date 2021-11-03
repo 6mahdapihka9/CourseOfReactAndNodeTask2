@@ -1,17 +1,26 @@
 import React from 'react'
+import './App.css'
+import {connect} from "react-redux"
+
+import Header from "./header/Header"
 import Filter from './footer/Filter'
 import VisibleTodoList from './todoList/VisibleTodoList'
+import MiddleBlock from "./middleBlock/MiddleBlock"
+import Statistics from "./statictics/Statistics"
 import FormWrapper from "./formWrappper/FormWrapper"
-import './App.css'
-import {connect} from "react-redux";
-import MiddleBlock from "./middleBlock/MiddleBlock";
 
 const App = ({visibility}) => (
-    <div>
-      {(visibility) ? <FormWrapper/> : null}
-      <Filter/>
-      <VisibleTodoList/>
-      <MiddleBlock/>
+    <div className={'view'}>
+      <Header/>
+      <section>
+        <Filter/>
+        <VisibleTodoList/>
+        <MiddleBlock/>
+      </section>
+      <section>
+        <Statistics/>
+      </section>
+      {(visibility) ? <FormWrapper className={'form-wrapper'}/> : null}
     </div>
 )
 

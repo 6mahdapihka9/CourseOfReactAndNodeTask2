@@ -1,37 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {setAnnouncerEvent, setFormVisible} from "../../../actions";
+import {setFormVisible} from "../../../actions";
 import {connect} from "react-redux";
 import './Todo.css';
+import SVGContainer from "./container/SVGContainer";
+import DataContainer from "./container/DataContainer";
 
 const Todo = ({setFormVisible, toggleTodo, deleteTodo, todo}) => (
     <li style={{
       textDecoration: todo.completed ? 'line-through' : 'none'
     }}>
-      <div>
-        {todo.name}
-      </div>
-      <div>
-        {todo.category}
-      </div>
-      <div>
-        {todo.dateOfCreation.toLocaleDateString()}
-      </div>
-      <div>
-        {todo.text}
-      </div>
-      <div>
-        {todo.datesFromText.join(', ')}
-      </div>
-      <button onClick={setFormVisible}>
-        edit
-      </button>
-      <button onClick={toggleTodo}>
-        toggle
-      </button>
-      <button onClick={deleteTodo}>
-        delete
-      </button>
+      <SVGContainer data={todo.category}/>
+      <DataContainer className={'name'} data={todo.name}/>
+      <DataContainer className={'category'} data={todo.category}
+                     secondary={true}/>
+      <DataContainer className={'dateOfCreation'} data={todo.dateOfCreation.toLocaleDateString()}
+                     tertiary={true}/>
+      <DataContainer className={'text'} data={todo.text}/>
+      <DataContainer className={'datesFromText'} data={todo.datesFromText.join(', ')}
+                     tertiary={true}/>
+      <SVGContainer data={'edit'} clickHandler={setFormVisible}/>
+      <SVGContainer data={(todo.completed)? 'complete': ''} clickHandler={toggleTodo}/>
+      <SVGContainer data={'delete'} clickHandler={deleteTodo}/>
+
     </li>
 )
 

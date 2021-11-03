@@ -5,26 +5,29 @@ import './TodoList.css';
 import {setAnnouncerEvent} from "../../actions";
 
 
-const TodoList = ({todos, toggleTodo, deleteTodo, dispatch}) => (
-    <div className={'wrapper'}>
-      <ul>
-        {todos.map(todo =>
-            <Todo
-                key={todo.id}
-                todo={todo}
-                toggleTodo={() => {
-                  toggleTodo(todo.id)
-                  dispatch(setAnnouncerEvent("Todo's completed property switched successfully!", false))
-                }}
-                deleteTodo={() => {
-                  deleteTodo(todo.id)
-                  dispatch(setAnnouncerEvent("Todo deleted successfully!", false))
-                }}
-            />
-        )}
-      </ul>
-    </div>
-)
+const TodoList = ({todos, toggleTodo, deleteTodo, dispatch}) => {
+
+  return (
+      (todos.length)?
+          <ul>
+            {todos.map(todo =>
+                <Todo
+                    key={todo.id}
+                    todo={todo}
+                    toggleTodo={() => {
+                      toggleTodo(todo.id)
+                      dispatch(setAnnouncerEvent("Todo's completed property switched successfully!", false))
+                    }}
+                    deleteTodo={() => {
+                      deleteTodo(todo.id)
+                      dispatch(setAnnouncerEvent("Todo deleted successfully!", false))
+                    }}
+                />
+            )}
+          </ul> :
+          <p>This list is empty!</p>
+  )
+}
 
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.shape({
