@@ -12,7 +12,8 @@ const Todo = ({setFormVisible, toggleTodo, deleteTodo, todo, header}) => {
         <li style={{
           textDecoration: todo.completed ? 'line-through' : 'none'
         }}>
-          <SVGContainer data={todo.category}/>
+          <SVGContainer data={todo.category}
+                        primary={true}/>
           <DataContainer className={'name'} data={todo.name}/>
           <DataContainer className={'category'} data={todo.category}
                          secondary={true}/>
@@ -32,7 +33,7 @@ const Todo = ({setFormVisible, toggleTodo, deleteTodo, todo, header}) => {
           fontWeight: 'bold',
           backgroundColor: 'lightblue'
         }}>
-          <SVGContainer/>
+          <SVGContainer primary={true}/>
           <DataContainer className={'name'} data={'Name'}/>
           <DataContainer className={'category'} data={'Category'}
                          secondary={true}/>
