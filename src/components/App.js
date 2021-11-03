@@ -3,7 +3,7 @@ import './App.css'
 import {connect} from "react-redux"
 
 import Header from "./header/Header"
-import Filter from './footer/Filter'
+import Filter from './filter/Filter'
 import VisibleTodoList from './todoList/VisibleTodoList'
 import MiddleBlock from "./middleBlock/MiddleBlock"
 import Statistics from "./statictics/Statistics"

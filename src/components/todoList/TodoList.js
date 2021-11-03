@@ -10,6 +10,7 @@ const TodoList = ({todos, toggleTodo, deleteTodo, dispatch}) => {
   return (
       (todos.length)?
           <ul>
+            <Todo header={true}/>
             {todos.map(todo =>
                 <Todo
                     key={todo.id}
@@ -38,9 +39,9 @@ TodoList.propTypes = {
     text: PropTypes.string.isRequired,
     datesFromText: PropTypes.array.isRequired,
     category: PropTypes.string.isRequired
-  }).isRequired).isRequired,
-  toggleTodo: PropTypes.func.isRequired,
-  deleteTodo: PropTypes.func.isRequired
+  }).isRequired),
+  toggleTodo: PropTypes.func,
+  deleteTodo: PropTypes.func
 }
 
 export default TodoList

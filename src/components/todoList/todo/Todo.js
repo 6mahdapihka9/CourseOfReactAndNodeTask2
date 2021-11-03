@@ -6,29 +6,51 @@ import './Todo.css';
 import SVGContainer from "./container/SVGContainer";
 import DataContainer from "./container/DataContainer";
 
-const Todo = ({setFormVisible, toggleTodo, deleteTodo, todo}) => (
-    <li style={{
-      textDecoration: todo.completed ? 'line-through' : 'none'
-    }}>
-      <SVGContainer data={todo.category}/>
-      <DataContainer className={'name'} data={todo.name}/>
-      <DataContainer className={'category'} data={todo.category}
-                     secondary={true}/>
-      <DataContainer className={'dateOfCreation'} data={todo.dateOfCreation.toLocaleDateString()}
-                     tertiary={true}/>
-      <DataContainer className={'text'} data={todo.text}/>
-      <DataContainer className={'datesFromText'} data={todo.datesFromText.join(', ')}
-                     tertiary={true}/>
-      <SVGContainer data={'edit'} clickHandler={setFormVisible}/>
-      <SVGContainer data={(todo.completed) ? 'complete' : ''} clickHandler={toggleTodo}/>
-      <SVGContainer data={'delete'} clickHandler={deleteTodo}/>
-
-    </li>
-)
+const Todo = ({setFormVisible, toggleTodo, deleteTodo, todo, header}) => {
+  if (!header)
+    return (
+        <li style={{
+          textDecoration: todo.completed ? 'line-through' : 'none'
+        }}>
+          <SVGContainer data={todo.category}/>
+          <DataContainer className={'name'} data={todo.name}/>
+          <DataContainer className={'category'} data={todo.category}
+                         secondary={true}/>
+          <DataContainer className={'dateOfCreation'} data={todo.dateOfCreation.toLocaleDateString()}
+                         tertiary={true}/>
+          <DataContainer className={'text'} data={todo.text}/>
+          <DataContainer className={'datesFromText'} data={todo.datesFromText.join(', ')}
+                         tertiary={true}/>
+          <SVGContainer data={'edit'} clickHandler={setFormVisible}/>
+          <SVGContainer data={(todo.completed) ? 'complete' : ''} clickHandler={toggleTodo}/>
+          <SVGContainer data={'delete'} clickHandler={deleteTodo}/>
+        </li>
+    )
+  else
+    return (
+        <li style={{
+          fontWeight: 'bold',
+          backgroundColor: 'lightblue'
+        }}>
+          <SVGContainer/>
+          <DataContainer className={'name'} data={'Name'}/>
+          <DataContainer className={'category'} data={'Category'}
+                         secondary={true}/>
+          <DataContainer className={'dateOfCreation'} data={'Created'}
+                         tertiary={true}/>
+          <DataContainer className={'text'} data={'Text'}/>
+          <DataContainer className={'datesFromText'} data={'Dates'}
+                         tertiary={true}/>
+          <SVGContainer/>
+          <SVGContainer/>
+          <SVGContainer/>
+        </li>
+    )
+}
 
 Todo.propTypes = {
-  toggleTodo: PropTypes.func.isRequired,
-  deleteTodo: PropTypes.func.isRequired
+  toggleTodo: PropTypes.func,
+  deleteTodo: PropTypes.func
 }
 
 const mapStateToProps = (state, ownProps) => ({
