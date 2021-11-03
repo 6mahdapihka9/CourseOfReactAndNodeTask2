@@ -1,28 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {setAnnouncerEvent, setFormVisible} from "../../../actions";
+import {setFormVisible} from "../../../actions";
 import {connect} from "react-redux";
 import './Todo.css';
+import DataContainer from "./container/DataContainer";
 
 const Todo = ({setFormVisible, toggleTodo, deleteTodo, todo}) => (
     <li style={{
       textDecoration: todo.completed ? 'line-through' : 'none'
     }}>
-      <div>
-        {todo.name}
-      </div>
-      <div>
-        {todo.category}
-      </div>
-      <div>
-        {todo.dateOfCreation.toLocaleDateString()}
-      </div>
-      <div>
-        {todo.text}
-      </div>
-      <div>
-        {todo.datesFromText.join(', ')}
-      </div>
+      <DataContainer data={todo.name}/>
+      <DataContainer data={todo.category}/>
+      <DataContainer data={todo.dateOfCreation.toLocaleDateString()}/>
+      <DataContainer data={todo.text}/>
+      <DataContainer data={todo.datesFromText.join(', ')}/>
       <button onClick={setFormVisible}>
         edit
       </button>
@@ -32,6 +23,7 @@ const Todo = ({setFormVisible, toggleTodo, deleteTodo, todo}) => (
       <button onClick={deleteTodo}>
         delete
       </button>
+
     </li>
 )
 

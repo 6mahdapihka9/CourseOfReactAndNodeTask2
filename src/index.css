@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
 }
-button{
+button:not(.icon-button){
     font-size: medium;
     padding: .5em 1em;
     background-color: lightblue;
