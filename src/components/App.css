@@ -2,8 +2,20 @@
     min-height: 100vh;
     position: relative;
 }
-.main {
-
+section{
+    margin: 2em 4em;
+    padding: 1em;
+    background-color: lightblue;
+    border-radius: .5em;
+}
+section > *{
+    margin: 1em;
+    padding: 1em;
+    background-color: ghostwhite;
+    border-radius: .5em;
+}
+section > *:not(:last-child) {
+    margin-bottom: 2em;
 }
 .form-wrapper {
     position: fixed;

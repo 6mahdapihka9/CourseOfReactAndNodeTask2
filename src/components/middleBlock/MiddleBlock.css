@@ -1,11 +1,13 @@
 .middle-block {
-    margin: 2em 0;
     display: flex;
     justify-content: end;
-
 }
-.middle-block > *{
-    margin-left: 2em;
+.middle-block > * {
+    margin-left: 1em;
+}
+.middle-block div{
+    display: flex;
+    align-items: center;
     padding: 1em;
     background-color: #b6d7d7;
     border-radius: 0.5em;
@@ -14,12 +16,10 @@
     opacity:  0;
     transition: opacity 1s;
 }
-
 .announcer-error {
     border-color: crimson;
     background-color: rgba(220,20,60,0.5);
 }
-
 .announcer-success {
     background-color: #b6d7d7;
 }
