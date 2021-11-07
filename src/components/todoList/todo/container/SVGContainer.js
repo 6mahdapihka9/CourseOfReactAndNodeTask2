@@ -1,9 +1,9 @@
-import React from "react"
+import React, {memo} from "react"
 import './SVGContainer.css'
 import './DataContainer.css'
 import {SVGs} from '../../../svg/SVGs'
 
-const SVGContainer = ({data, primary, secondary, tertiary, clickHandler}) => {
+const SVGContainer = memo(({data, primary, secondary, tertiary, clickHandler}) => {
   return (
       (clickHandler)?
           <button className={'icon operation ' +
@@ -24,6 +24,6 @@ const SVGContainer = ({data, primary, secondary, tertiary, clickHandler}) => {
 
           </div>
   )
-}
+})
 
 export default SVGContainer

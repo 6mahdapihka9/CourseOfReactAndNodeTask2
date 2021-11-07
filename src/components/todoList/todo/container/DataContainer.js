@@ -1,7 +1,7 @@
-import React from "react"
+import React, {memo} from "react"
 import './DataContainer.css'
 
-const DataContainer = ({data, primary, secondary, tertiary, className}) => {
+const DataContainer = memo(({data, primary, secondary, tertiary, className}) => {
   return (
       <div className={'container '+
           ((primary)? 'primary ' : '') +
@@ -12,6 +12,6 @@ const DataContainer = ({data, primary, secondary, tertiary, className}) => {
         { data }
       </div>
   )
-}
+})
 
 export default DataContainer
