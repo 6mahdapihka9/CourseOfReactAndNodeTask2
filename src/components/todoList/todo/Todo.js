@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react'
 import PropTypes from 'prop-types'
 import {setFormVisible} from "../../../actions";
 import {connect} from "react-redux";
@@ -6,7 +6,7 @@ import './Todo.css';
 import SVGContainer from "./container/SVGContainer";
 import DataContainer from "./container/DataContainer";
 
-const Todo = ({setFormVisible, toggleTodo, deleteTodo, todo, header}) => {
+const Todo = memo(({setFormVisible, toggleTodo, deleteTodo, todo, header}) => {
   if (!header)
     return (
         <li style={{
@@ -47,7 +47,7 @@ const Todo = ({setFormVisible, toggleTodo, deleteTodo, todo, header}) => {
           <SVGContainer/>
         </li>
     )
-}
+})
 
 Todo.propTypes = {
   toggleTodo: PropTypes.func,
